@@ -5,6 +5,8 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+Route::view('/', 'home');
+
 /*
 Route::get('/', function () {
     return view('home');
@@ -13,7 +15,6 @@ Route::get('/', function () {
 
 
 /*
-Route::view('/', 'home');
 Route::get('/jobs', [JobController::class, 'index']);
 Route::get('/jobs/create', [JobController::class, 'create']);
 Route::get('/jobs/{job}', [JobController::class, 'show']);
@@ -43,4 +44,5 @@ Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/login', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
+Route::post('/logout', [SessionController::class, 'destroy']);
 
